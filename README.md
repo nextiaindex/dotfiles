@@ -5,4 +5,4 @@ This is my dotfiles repository. You can use it, you can steal it. If you tell me
 
 If you have problems when using my dotfiles, please make a post in Issues section. Be patient and I will help you to solve your problem
 
-## Screenshots
+## Screenshot
