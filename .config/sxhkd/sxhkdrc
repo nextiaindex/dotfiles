@@ -11,7 +11,7 @@ super + @space
 	rofi -show drun
 
 # emoji
-super + >
+super + .
     rofi -show emoji
 
 # make sxhkd reload its configuration files:
