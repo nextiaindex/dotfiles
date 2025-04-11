@@ -3,6 +3,7 @@ configuration {
 	drun-display-format: "{icon} {name}";
 	font: "VictorMono Nerd Font 12";
 	show-icons: true;
+    modi: "drun,emoji";
 }
 
 @theme "/dev/null"
