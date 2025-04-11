@@ -10,6 +10,10 @@ super + Return
 super + @space
 	rofi -show drun
 
+# emoji
+super + >
+    rofi -show emoji
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
