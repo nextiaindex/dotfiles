@@ -1,0 +1,24 @@
+#!/bin/sh
+
+MPD_LIBRARY="${HOME}/Music"
+MPC_TEMP="/tmp/ncmpcpp"
+MPC_COVER_IMG="${MPC_TEMP}/mpc-playing.jpg"
+mkdir -p "$MPC_TEMP"
+
+trackData=$(mpc --format 'File: %file%\nTitle: %title%\nArtist: %artist%\nAlbum: %album%' current)
+trackFile="${trackData#*File: }"
+trackFile="${trackFile%%
+*}"
+trackTitle="${trackData#*Title: }"
+trackTitle="${trackTitle%%
+*}"
+trackArtist="${trackData#*Artist: }"
+trackArtist="${trackArtist%%
+*}"
+trackAlbum="${trackData#*Album: }"
+
+[ -z "$trackTitle" ] && trackTitle="${trackFile}"
+
+rm -f "${MPC_COVER_IMG}"
+ffmpeg -y -i "${MPD_LIBRARY}/${trackFile}" -an -c:v copy "${MPC_COVER_IMG}" 2>${MPC_TEMP}/mpc-notif.log && ICON_NOTIF="${MPC_COVER_IMG}" || ICON_NOTIF="library-music"
+notify-send "ncmpcpp" "  $trackArtist"'\n'"󰎇  $trackTitle"'\n'"󰀥  $trackAlbum" --icon="${ICON_NOTIF}"
