@@ -18,7 +18,7 @@ current_item_suffix = $8
 now_playing_prefix = $b$2
 now_playing_suffix = $8$/b
 
-song_status_format = {%a} - {%t} from {"%b"} {(%y)}
+song_status_format = {"%t"} by {%a} from {"%b"}
 song_columns_list_format = (32)[]{a} (32)[]{t|f:Title} (32)[]{b} (4f)[]{l}
 
 main_window_color = "white"
