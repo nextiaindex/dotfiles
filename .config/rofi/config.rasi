@@ -1,0 +1,83 @@
+configuration {
+	display-drun: "Aplications";
+	drun-display-format: "{icon} {name}";
+	font: "SpaceMono Nerd Font 12";
+	show-icons: true;
+    modi: "drun,emoji";
+}
+
+@theme "/dev/null"
+
+* {
+	bg: #1f2430;
+	bg-alt: #333c50;
+	primary: #f28779;
+
+	fg: #c7c7c7;
+	fg-alt: #fcfcfc;
+	gray: #686868;
+
+	background-color: @bg;
+}
+
+window {
+	width: 30%;
+	background-color: @bg;
+	border: 2px;
+	border-color: @gray;
+	padding: 10px;
+}
+
+element {
+	padding: 10;
+	background-color: transparent;
+	text-color: @fg;
+}
+
+element selected {
+	text-color: @fg-alt;
+	background-color: @bg-alt;
+}
+
+element-text {
+	background-color: transparent;
+	text-color: inherit;
+	vertical-align: 0.5;
+}
+
+element-icon {
+	size: 30;
+	padding: 0 0 0 0;
+	background-color: transparent;
+}
+
+entry {
+	padding: 10;
+	background-color: @bg-alt;
+	text-color: @fg;
+}
+
+inputbar {
+  	children: [prompt, entry];
+  	background-color: @bg;
+	margin: 0 0 10 0;
+}
+
+listview {
+  	background-color: @bg;
+  	columns: 1;
+  	lines: 10;
+}
+
+mainbox {
+  	children: [inputbar, listview];
+  	background-color: @bg;
+}
+
+prompt {
+  	enabled: true;
+  	padding: 10;
+  	background-color: @bg-alt;
+  	text-color: @fg;
+	margin: 0 5 1 0;
+}
