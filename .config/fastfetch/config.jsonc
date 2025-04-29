@@ -10,6 +10,7 @@
 	},
 	"modules": [
 		"break",
+		"break",
 		"title",
 		"separator",
 		{
@@ -37,7 +38,6 @@
 			"format": "{name}"
 		},
 		"break",
-		"colors",
 		"break",
 		"break",
 		"break"
