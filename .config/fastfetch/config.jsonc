@@ -4,10 +4,12 @@
 		"source": "$HOME/.config/fastfetch/cowsay-id.txt",
 		"type": "file",
 		"padding": {
+			"top": 1,
 			"left": 2
 		}	
 	},
 	"modules": [
+		"break",
 		"break",
 		"title",
 		"separator",
