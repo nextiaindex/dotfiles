@@ -5,17 +5,18 @@
 		"type": "file",
 		"padding": {
 			"top": 1,
-			"left": 4
-		}	
+			"left": 3,
+			"right": 3
+		}
 	},
 	"modules": [
-		"break",
 		"break",
 		"title",
 		"separator",
 		{
-			"type": "host",
-			"format": "{name}"
+			"type": "custom",
+			"key": "Laptop",
+			"format": "ASUS Vivobook 14 A412DA"
 		},
 		{
 			"type": "os",
@@ -38,6 +39,10 @@
 			"format": "{name}"
 		},
 		"break",
+		{
+			"type": "colors",
+			"symbol": "square"
+		},
 		"break",
 		"break",
 		"break"
