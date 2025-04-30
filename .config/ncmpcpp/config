@@ -22,7 +22,7 @@ song_list_format = {%a - }{%t}|{$8%f$9}$R{$2%l$9}
 song_status_format = {$2%a} $8- {$4%t} $8| {$3%b} {$5(%y)$8}
 song_columns_list_format = (32)[]{a} (32)[]{t|f:Title} (32)[]{b} (4f)[]{l}
 
-execute_on_song_change = songinfo
+execute_on_song_change = songstatus
 
 main_window_color = default
 progressbar_elapsed_color = red
