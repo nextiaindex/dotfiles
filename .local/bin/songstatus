@@ -1,7 +1,11 @@
 #!/bin/sh
 
-AlbumArt="/tmp/ncmpcpp/mpcNowPlaying.jpg" # Assign the AlbumArt variable with the path of the song's album art thats currently playing
-Metadata=$(mpc --format '%artist%\n%title%\n%album%' current) # Fetch the song metadata (artist, title, album name) with mpc
+Music="$HOME/Music" # Assign the Music directory
+Temp="/tmp/ncmpcpp" # Assign the ncmpcpp's temp files
+AlbumArt="${Temp}/mpcNowPlaying.jpg" # Assign the AlbumArt variable with the path of the song's album art thats currently playing
+Metadata=$(mpc --format '%file%\n%artist%\n%title%\n%album%' current) # Fetch the song metadata (artist, title, album name) with mpc
+
+mkdir -p "$Temp" # Create $Temp if its not exist
 
 if [ -z "$Metadata" ]; then # Send "no music is playing..." notification if $Metadata didn't print any strings.
     notify-send "ncmpcpp" "No music is playing..."
@@ -10,9 +14,13 @@ fi
 
 # Extract the output of $Metadata and assign them into variables
 # Author's note: I did this so that I can add Nerd Fonts into the notification
-	SongArtist=$(echo "$Metadata" | sed -n '1p')
-	SongTitle=$(echo "$Metadata" | sed -n '2p')
-	SongAlbum=$(echo "$Metadata" | sed -n '3p')
+	SongFile=$(echo "$Metadata" | sed -n '1p')
+	SongArtist=$(echo "$Metadata" | sed -n '2p')
+	SongTitle=$(echo "$Metadata" | sed -n '3p')
+	SongAlbum=$(echo "$Metadata" | sed -n '4p')
 #
+
+rm -f "${AlbumArt}" # Remove the album art
+ffmpeg -y -i "${Music}/${SongFile}" -an -c:v copy "${AlbumArt}" 2>${Temp}/mpc-notif.log && IconNotif="${AlbumArt}" || ICON_NOTIF="library-music" # Copy and paste the album art from the song file into $Temp
 
 notify-send "ncmpcpp" "󰠃 $SongArtist"'\n'"󰎆 $SongTitle"'\n'"󰀥 $SongAlbum" --icon="$AlbumArt" # Send the notification
