@@ -21,6 +21,5 @@ fi
 #
 
 rm -f "${AlbumArt}" # Remove the album art
-ffmpeg -y -i "${Music}/${SongFile}" -an -c:v copy "${AlbumArt}" 2>${Temp}/mpc-notif.log && IconNotif="${AlbumArt}" || ICON_NOTIF="library-music" # Copy and paste the album art from the song file into $Temp
-
+ffmpeg -loglevel quiet -i "${Music}/${SongFile}" -an -vcodec copy "${Temp}/mpcNowPlaying.jpg" # Extract the album art picture from $SongFile and export it to ${Temp}
 notify-send "ncmpcpp" "󰠃 $SongArtist"'\n'"󰎆 $SongTitle"'\n'"󰀥 $SongAlbum" --icon="$AlbumArt" # Send the notification
