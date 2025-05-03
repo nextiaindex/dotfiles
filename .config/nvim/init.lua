@@ -20,6 +20,7 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.confirm = true
+-- vim.opt.wrap = false
 
 -- require this require that...
 require("lazy").setup({
@@ -57,7 +58,7 @@ require("lazy").setup({
 				local section = dashboard.section
 				local fn = vim.fn
 				local config = dashboard.config
-				 dashboard.section.header.val = {
+				dashboard.section.header.val = {
 				[[ __   __     __   __   __     __    __]],
 				[[/\ "-.\ \   /\ \ / /  /\ \   /\ "-./  \]],
 				[[\ \ \-.  \  \ \ \'/   \ \ \  \ \ \-./\ \]],
@@ -102,12 +103,24 @@ require("lazy").setup({
 			event = "InsertEnter",
 			config = true
 		},
-		{ "ranjithshegde/ccls.nvim" },
 	},
 	install = { colorscheme = { "habamax" } },
 	checker = { enabled = true },
 })
 
+-- Auto update
+	local function augroup(name)
+		return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+	end
+	vim.api.nvim_create_autocmd("VimEnter", {
+		group = augroup("autoupdate"),
+		callback = function()
+			if require("lazy.status").has_updates then
+				require("lazy").update({ show = false, })
+			end
+		end,
+	})
+--
 -- Ayu Mirage
 	require('ayu').setup({
 		mirage = true,
@@ -153,6 +166,7 @@ require('ibl').setup()
 				'javascriptreact',
 				'less',
 				'pug',
+				'php',
 				'sass',
 				'scss',
 				'typescriptreact',
@@ -173,6 +187,34 @@ require('ibl').setup()
 		})
 		vim.lsp.enable('emmet-language-server')
 	--
-	-- C
-	require("ccls").setup()
+	-- CCLS
+	local function switch_source_header(client, bufnr)
+		local method_name = 'textDocument/switchSourceHeader'
+		local params = vim.lsp.util.make_text_document_params(bufnr)
+		client:request(method_name, params, function(err, result)
+			if err then
+				error(tostring(err))
+			end
+			if not result then
+				vim.notify('corresponding file cannot be determined')
+				return
+			end
+			vim.cmd.edit(vim.uri_to_fname(result))
+		end, bufnr)
+	end
+		vim.lsp.config('ccls', {
+			cmd = { 'ccls' },
+			filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
+			root_markers = { 'compile_commands.json', '.ccls', '.git' },
+			offset_encoding = 'utf-32',
+			-- ccls does not support sending a null root directory
+			workspace_required = true,
+			on_attach = function(client)
+				vim.api.nvim_buf_create_user_command(0, 'LspCclsSwitchSourceHeader', function()
+					switch_source_header(client, 0)
+				end, { desc = 'Switch between source/header' })
+			end,
+		})
+		vim.lsp.enable('ccls')
+	--
 --
