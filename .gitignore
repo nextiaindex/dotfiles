@@ -1,0 +1,7 @@
+.config/nvim/.github
+.config/nvim/.git
+.config/nvim/lazy-lock.json
+.config/nvim/.stylua.toml
+.config/nvim/.gitignore
+.config/kitty/kitty.conf.bak
+.config/ncmpcpp/error.log
