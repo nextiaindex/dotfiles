@@ -2,7 +2,7 @@
 
 Music="$HOME/Music" # Assign the Music directory
 Temp="/tmp/ncmpcpp" # Assign the ncmpcpp's temp files
-AlbumArt="${Temp}/mpcNowPlaying.jpg" # Assign the AlbumArt variable with the path of the song's album art thats currently playing
+AlbumArt="${Temp}/AlbumArt.jpg" # Assign the AlbumArt variable with the path of the song's album art thats currently playing
 Metadata=$(mpc --format '%file%\n%artist%\n%title%\n%album%' current) # Fetch the song metadata (artist, title, album name) with mpc
 
 mkdir -p "$Temp" # Create $Temp if its not exist
@@ -21,5 +21,5 @@ fi
 #
 
 rm -f "${AlbumArt}" # Remove the album art
-ffmpeg -loglevel quiet -i "${Music}/${SongFile}" -an -vcodec copy "${Temp}/mpcNowPlaying.jpg" # Extract the album art picture from $SongFile and export it to ${Temp}
+ffmpeg -loglevel quiet -i "${Music}/${SongFile}" -an -vcodec copy "${Temp}/AlbumArt.jpg" # Extract the album art picture from $SongFile and export it to ${Temp}
 notify-send "ncmpcpp" "󰠃 $SongArtist"'\n'"󰎆 $SongTitle"'\n'"󰀥 $SongAlbum" --icon="$AlbumArt" # Send the notification
