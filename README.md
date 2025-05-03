@@ -3,8 +3,10 @@ This is a repository where I put my Linux dotfiles. You can use all of the dotfi
 
 # Screenshots
 ## bspwm
-### old
+### old setup
 ![](screenshots/bspwm-old.png)
+### latest setup
+![](screenshots/bspwm-new.png)
 ## dwm
 ![](screenshots/dwm.png)
 
