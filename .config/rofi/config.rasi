@@ -13,8 +13,8 @@ configuration {
 	bg-alt: #333c50;
 	primary: #f28779;
 
-	fg: #c7c7c7;
-	fg-alt: #fcfcfc;
+	fg: #cccac2;
+	fg-alt: #cccac2;
 	gray: #686868;
 
 	background-color: @bg;
@@ -35,8 +35,8 @@ element {
 }
 
 element selected {
-	text-color: @fg-alt;
-	background-color: @bg-alt;
+	text-color: @bg;
+	background-color: @primary;
 }
 
 element-text {
