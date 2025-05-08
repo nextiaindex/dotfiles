@@ -1,0 +1,23 @@
+[manager]
+cwd = { fg = "red" }
+
+marker_cut = { fg = "magenta", bg = "magenta" }
+
+count_copied = { fg = "black", bg = "green" }
+count_cut = { fg = "black", bg = "magenta" }
+count_selected = { fg = "black", bg = "yellow" }
+
+[mode]
+normal_main = { fg = "black", bg = "red" }
+normal_alt = { fg = "black", bg = "gray" }
+
+select_main = { fg = "black", bg = "blue" }
+select_alt = { fg = "black", bg = "gray" }
+
+unset_main = { fg = "black", bg = "yellow" }
+unset_alt = { fg = "black", bg = "gray" }
+
+[filetype]
+rules = [
+	{ name = "*/", fg = "red" }
+]
