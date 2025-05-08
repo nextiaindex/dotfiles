@@ -1,0 +1,3 @@
+#!/bin/sh
+maim ~/Screenshots/screenshot-full-$(date +%d-%m-%Y-%H-%M).png
+notify-send "screenshot-full" "Execution finished"
