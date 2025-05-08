@@ -125,7 +125,13 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 Print
-	flameshot gui
+	PATH=$PATH:/home/nextia/.local/bin screenshot-plain
+
+alt + Print
+	PATH=$PATH:/home/nextia/.local/bin screenshot-fancy
+
+ctrl + Print
+	PATH=$PATH:/home/nextia/.local/bin screenshot-full
 
 XF86MonBrightnessUp
 	brightnessctl set +5%
