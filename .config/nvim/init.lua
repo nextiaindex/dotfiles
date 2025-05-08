@@ -51,7 +51,6 @@ require("lazy").setup({
 			opts = {
 				keymap = {
 					preset = 'default',
-					['<Enter>'] = {'select_and_accept'}
 			},
 				appearance = {
 					nerd_font_variant = 'mono'
