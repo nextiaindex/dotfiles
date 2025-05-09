@@ -94,18 +94,18 @@ require("lazy").setup({
 				local fn = vim.fn
 				local config = dashboard.config
 				 dashboard.section.header.val = {
-				[[ __   __     __   __   __     __    __]],
-				[[/\ "-.\ \   /\ \ / /  /\ \   /\ "-./  \]],
-				[[\ \ \-.  \  \ \ \'/   \ \ \  \ \ \-./\ \]],
-				[[ \ \_\\"\_\  \ \__|    \ \_\  \ \_\ \ \_\]],
-				[[  \/_/ \/_/   \/_/      \/_/   \/_/  \/_/]],
+					[[ __   __     __   __   __     __    __    ]],
+					[[/\ "-.\ \   /\ \ / /  /\ \   /\ "-./  \   ]],
+					[[\ \ \-.  \  \ \ \'/   \ \ \  \ \ \-./\ \  ]],
+					[[ \ \_\\"\_\  \ \__|    \ \_\  \ \_\ \ \_\ ]],
+					[[  \/_/ \/_/   \/_/      \/_/   \/_/  \/_/ ]]
 				}
 				dashboard.section.header.opts.hl = "Exception"
 				dashboard.section.buttons.val = {
-					 dashboard.button( "E", "  New file" , ":ene <BAR> startinsert <CR>"),
+					 dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
 					 dashboard.button( "Space + FF", "󰈞  Find file", ":Telescope find_files cwd=/home<CR>" ),
 					 dashboard.button ("Space + FO", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
-					 dashboard.button( "q", "󰅚  Quit NVIM" , ":qa<CR>"),
+					 dashboard.button( "q", "󰅚  Quit Neovim" , ":qa<CR>"),
 				}
 				local handle = io.popen('fortune')
 				local fortune = handle:read("*a")
