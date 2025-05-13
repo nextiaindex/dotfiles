@@ -20,6 +20,8 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.confirm = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.diagnostic.config({
 	signs = {
 		text = {
@@ -103,7 +105,7 @@ require("lazy").setup({
 				dashboard.section.header.opts.hl = "Exception"
 				dashboard.section.buttons.val = {
 					 dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
-					 dashboard.button( "Space + FF", "󰈞  Find file", ":Telescope find_files cwd=/home<CR>" ),
+					 dashboard.button( "Space + FF", "󰈞  Find file", ":Telescope find_files <CR>"),
 					 dashboard.button ("Space + FO", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
 					 dashboard.button( "q", "󰅚  Quit Neovim" , ":qa<CR>"),
 				}
@@ -177,9 +179,7 @@ require('ibl').setup()
 	})
 	-- Telescope Keybinds
 		local builtin = require('telescope.builtin')
-		vim.keymap.set('n', '<leader>ff', function()
-			builtin.find_files({ cwd = "/home" })
-		end, { desc = 'Telescope find files in /home' })
+		vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files'})
 		vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 		vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 		vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
