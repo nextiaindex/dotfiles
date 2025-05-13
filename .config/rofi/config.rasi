@@ -1,7 +1,7 @@
 configuration {
 	display-drun: "Aplications";
 	drun-display-format: "{icon} {name}";
-	font: "SpaceMono Nerd Font 12";
+	font: "Nextia Mono 12";
 	show-icons: true;
     modi: "drun,emoji";
 }
