@@ -1,4 +1,7 @@
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-feh --bg-fill /home/nextia/Wallpapers/ayumirageblank.png &
+#feh --bg-fill /home/nextia/Wallpapers/ayumirageblank.png &
+feh --bg-fill /home/nextia/Wallpapers/jakarta1red.png &
 slstatus &
-fastcompmgr -r 0 -o 0 -l 0 -t 0 &
+picom &
+#fastcompmgr -c -C &
+#fastcompmgr -r 0 -o 0 -l 0 -t 0 &
