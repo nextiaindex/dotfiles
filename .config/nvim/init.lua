@@ -89,7 +89,7 @@ require("lazy").setup({
 		{ 'lukas-reineke/indent-blankline.nvim' },
 		{
 			'goolord/alpha-nvim',
-		         config = function ()
+		        config = function ()
 				local alpha = require'alpha'
 				local dashboard = require'alpha.themes.dashboard'
 				local section = dashboard.section
@@ -105,8 +105,8 @@ require("lazy").setup({
 				dashboard.section.header.opts.hl = "Exception"
 				dashboard.section.buttons.val = {
 					 dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
-					 dashboard.button( "Space + FF", "󰈞  Find file", ":Telescope find_files <CR>"),
-					 dashboard.button ("Space + FO", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
+					 dashboard.button( "<Space> + ff", "󰈞  Find file", ":Telescope find_files <CR>"),
+					 dashboard.button ("<Space> + fo", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
 					 dashboard.button( "q", "󰅚  Quit Neovim" , ":qa<CR>"),
 				}
 				local handle = io.popen('fortune')
