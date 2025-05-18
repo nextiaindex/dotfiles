@@ -1,7 +1,7 @@
 configuration {
 	display-drun: "Aplications";
 	drun-display-format: "{icon} {name}";
-	font: "Nextia Mono 12";
+	font: "SpaceMono Nerd Font 12";
 	show-icons: true;
     modi: "drun,emoji";
 }
@@ -18,6 +18,7 @@ configuration {
 	gray: #686868;
 
 	background-color: @bg;
+	/*border-radius: 0.20em;*/
 }
 
 window {
