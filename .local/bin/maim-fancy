@@ -1,0 +1,12 @@
+#!/bin/sh
+sleep 0.2
+File=Screenshot_$(date +%d-%m-%Y-%H-%M).png
+
+if maim -s "$File"; then
+	mv Screenshot*.png /tmp/
+	magick /tmp/Screenshot*.png \( +clone -background black -shadow 80x10+0+0 -fill "#171b24" \) +swap -background "#3f455a" -layers merge +repage /tmp/Screenshot*.png
+	mv /tmp/Screenshot*.png ~/Screenshots
+	notify-send "maim" "Fancy region screenshot saved"
+else
+	notify-send "maim" "Fancy region screenshoting cancelled"
+fi

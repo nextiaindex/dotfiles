@@ -2,7 +2,7 @@
 sleep 0.2
 File=~/Screenshots/Screenshot_$(date +%d-%m-%Y-%H-%M).png
 
-if maim -s "$File";  then
+if maim -s -u "$File";  then
 	notify-send "maim" "Plain region screenshot saved"
 else
 	notify-send "maim" "Plain region screenshoting cancelled"

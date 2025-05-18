@@ -1,0 +1,4 @@
+#!/bin/sh
+sleep 0.2
+grim ~/Screenshots/screenshot-full-$(date +%d-%m-%Y-%H-%M).png
+notify-send "grim" "Fullscreen screenshot saved"
