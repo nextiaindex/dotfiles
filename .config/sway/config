@@ -1,3 +1,4 @@
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec autotiling-rs
 
 set $mod Mod4
@@ -9,7 +10,6 @@ set $term foot
 set $menu rofi -show drun
 
 output * bg /home/nextia/Wallpapers/jakarta2reder.png fill
-
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
@@ -105,6 +105,7 @@ input "1267:12486:ELAN1301:00_04F3:30C6_Touchpad" {
 }
 
 default_border pixel 2px
+default_floating_border pixel 2px
 
 gaps inner 10px
 gaps outer 10px
