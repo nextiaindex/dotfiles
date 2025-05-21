@@ -81,6 +81,26 @@ require("lazy").setup({
 				},
 				sources = {
 					default = { 'lsp', 'path', 'snippets', 'buffer' },
+					providers = {
+						lsp = {
+							enabled = function()
+								local clients = vim.lsp.get_active_clients({bufnr = vim.api.nvim_get_current_buf()})
+								return #clients > 0
+							end,
+						},
+						path = {
+							enabled = function()
+								local clients = vim.lsp.get_active_clients({bufnr = vim.api.nvim_get_current_buf()})
+								return #clients > 0
+							end,
+						},
+						snippets = {
+							enabled = function()
+								local clients = vim.lsp.get_active_clients({bufnr = vim.api.nvim_get_current_buf()})
+								return #clients > 0
+							end,
+						},
+					}
 				},
 				fuzzy = { implementation = "prefer_rust_with_warning" },
 			},
