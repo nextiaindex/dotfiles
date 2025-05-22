@@ -212,7 +212,10 @@ require('ibl').setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("hardtime").setup()
-vim.notify = require("notify")
-require("notify").setup({
-	render = "minimal"
-})
+-- nvim-notify
+	vim.notify = require("notify")
+	require("notify").setup({
+		render = "wrapped-compact",
+		stages = "static",
+	})
+--
