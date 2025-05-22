@@ -1,0 +1,5 @@
+*.o
+dwm
+dwm-msg
+*def.h
+.ccls-cache
