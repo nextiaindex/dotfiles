@@ -14,6 +14,6 @@ This is a repository where I put my Linux dotfiles. You can use all of the dotfi
 ![](screenshots/swayfx.png)
 
 # suckless build
-- [dwm](https://github.com/nextiaindex/dwm)
-- [st](https://github.com/nextiaindex/st)
-- [slstatus](https://github.com/nextiaindex/slstatus)
+- [dwm](https://codeberg.org/nextiaindex/dwm)
+- [st](https://codeberg.org/nextiaindex/st)
+- [slstatus](https://codeberg.org/nextiaindex/slstatus)
