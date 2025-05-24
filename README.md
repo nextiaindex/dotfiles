@@ -1,4 +1,7 @@
-# Dotfiles
+# Announcement
+I won't be using GitHub to host my dotfiles. Please visit ![my codeberg repository](https://codeberg.org/nextiaindex/nextiaindex.dev) instead.
+
+## Dotfiles
 This is a repository where I put my Linux dotfiles. You can use all of the dotfiles in this repository, but keep it in mind that they are optimized for my needs.
 
 # Screenshots
