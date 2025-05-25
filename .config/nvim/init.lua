@@ -22,7 +22,6 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
---vim.opt.termguicolors = true
 vim.diagnostic.config({
 	signs = {
 		text = {
@@ -163,7 +162,6 @@ require("lazy").setup({
 		},
 		{
 			"mason-org/mason.nvim",
-			"mason-org/mason-lspconfig.nvim",
 		},
 		{"m4xshen/hardtime.nvim", dependencies = {"MunifTanjim/nui.nvim"}},
 		{"rcarriga/nvim-notify"}
@@ -210,12 +208,43 @@ require('ibl').setup()
 	--
 --
 require("mason").setup()
-require("mason-lspconfig").setup()
 require("hardtime").setup()
 -- nvim-notify
 	vim.notify = require("notify")
 	require("notify").setup({
 		render = "wrapped-compact",
 		stages = "static",
+	})
+--
+-- LSP Config
+	local lspconfig = require('lspconfig')
+
+	lspconfig.lua_ls.setup {
+		settings = {
+			Lua = {
+				runtime = {
+					version = 'LuaJIT',
+					path = vim.split(package.path, ';'),
+				},
+				diagnostics = {
+					globals = {'vim'},
+				},
+				workspace = {
+					library = vim.api.nvim_get_runtime_file("", true),
+					checkThirdParty = false,
+				},
+				telemetry = {
+					enable = false,  -- Disable telemetry
+				},
+			},
+		},
+	}
+	-- Intelephense for PHP
+	lspconfig.intelephense.setup({})
+	lspconfig.html.setup({
+		filetypes = { "html", "php" }, -- include PHP for embedded HTML
+	})
+	lspconfig.cssls.setup({
+		filetypes = { "css", "scss", "less", "php" }, -- optional for inline styles
 	})
 --
