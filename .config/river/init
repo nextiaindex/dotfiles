@@ -1,0 +1,73 @@
+#!/bin/sh
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+waybar &
+
+riverctl map normal Super+Shift Return spawn foot
+riverctl map normal Super D spawn 'rofi -show drun'
+riverctl map normal Super+Shift Q close
+riverctl map normal Super+Shift E exit
+
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+
+riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"
+
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+
+riverctl map normal Super+Alt H move left 10
+riverctl map normal Super+Alt J move down 10
+riverctl map normal Super+Alt K move up 10
+riverctl map normal Super+Alt L move right 10
+
+riverctl map normal Super+Alt+Shift H resize horizontal -10
+riverctl map normal Super+Alt+Shift J resize vertical 10
+riverctl map normal Super+Alt+Shift K resize vertical -10
+riverctl map normal Super+Alt+Shift L resize horizontal 10
+
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    riverctl map normal Super $i set-focused-tags $tags
+    riverctl map normal Super+Shift $i set-view-tags $tags
+done
+
+riverctl map normal Super Space toggle-float
+riverctl map normal Super F toggle-fullscreen
+
+for mode in normal locked
+do
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 1'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 1'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+
+	riverctl map $mode None Print spawn '/home/nextia/.local/bin/river-plain'
+done
+riverctl map normal Mod1 Print spawn '/home/nextia/.local/bin/river-fancy'
+riverctl map normal Control Print spawn '/home/nextia/.local/bin/river-full'
+
+riverctl input pointer-1267-12486-ELAN1301:00_04F3:30C6_Touchpad pointer-accel 0.4
+riverctl input pointer-1267-12486-ELAN1301:00_04F3:30C6_Touchpad natural-scroll enabled
+riverctl input pointer-1267-12486-ELAN1301:00_04F3:30C6_Touchpad tap enabled
+
+pointer-12538-5184-INSTANT_USB_GAMING_MOUSE
+riverctl input pointer-12538-5184-INSTANT_USB_GAMING_MOUSE accel-profile flat
+riverctl input pointer-12538-5184-INSTANT_USB_GAMING_MOUSE pointer-accel 0.1
+
+riverctl rule-add -app-id 'float*' -title 'foo' float
+riverctl rule-add -app-id "bar" ssd
+
+riverctl default-layout rivertile
+rivertile -view-padding 5 -outer-padding 15 -main-ratio 0.5 &
+riverctl border-color-focused 0xf28779
+riverctl border-color-unfocused 0x686868
+riverctl background-color 0x2a2e3c
