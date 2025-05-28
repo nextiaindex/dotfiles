@@ -1,6 +1,6 @@
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-feh --bg-fill /home/nextia/Wallpapers/ayumirageblank.png &
-#feh --bg-fill /home/nextia/Wallpapers/jakarta1red.png &
+#feh --bg-fill /home/nextia/Wallpapers/ayumirageblank.png &
+feh --bg-fill /home/nextia/Wallpapers/jakarta1red.png &
 #feh --bg-fill /home/nextia/Wallpapers/jakarta2red.png &
 slstatus &
 picom &
