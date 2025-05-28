@@ -1,0 +1,11 @@
+#!/bin/sh
+sleep 0.2
+File=~/Screenshots/Screenshot_$(date +%d-%m-%Y-%H-%M).png
+Region=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | "\(.rect.x+.window_rect.x),\(.rect.y+.window_rect.y) \(.window_rect.width)x\(.window_rect.height)"' | slurp)
+
+if grim -g "$Region" "$File"; then
+	notify-send "grim" "Fancy region screenshot saved"
+else
+	notify-send "grim" "Fancy region screenshoting cancelled"
+fi
+
