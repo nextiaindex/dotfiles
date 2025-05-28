@@ -9,7 +9,7 @@ set $right l
 set $term foot
 set $menu rofi -show drun
 
-output * bg /home/nextia/Wallpapers/jakarta2reder.png fill
+output * bg /home/nextia/Wallpapers/jakarta2red.png fill
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
