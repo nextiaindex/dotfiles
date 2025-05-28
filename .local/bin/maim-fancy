@@ -2,7 +2,7 @@
 sleep 0.2
 File=Screenshot_$(date +%d-%m-%Y-%H-%M).png
 
-if maim -s "$File"; then
+if maim -s -u "$File"; then
 	mv Screenshot*.png /tmp/
 	magick /tmp/Screenshot*.png \( +clone -background black -shadow 80x10+0+0 -fill "#171b24" \) +swap -background "#3f455a" -layers merge +repage /tmp/Screenshot*.png
 	mv /tmp/Screenshot*.png ~/Screenshots
