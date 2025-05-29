@@ -1,8 +1,5 @@
 {
-    "height": 32,
-	"margin-top": 20,
-	"margin-right": 20,
-	"margin-left": 20,
+    "height": 40,
     "modules-left": [
         "sway/workspaces"
     ],
@@ -16,10 +13,9 @@
 		"pulseaudio",
 		"custom/seperator2",
         "battery",
-		"custom/seperator1",
+		"custom/seperator2",
         "clock",
-		"custom/seperator3",
-        "tray"
+		"tray"
     ],
 	"custom/seperator1": {
 		"format": " | "
@@ -29,6 +25,9 @@
 	},
 	"custom/seperator3": {
 		"format": " |"
+	},
+	"custom/space": {
+		"format": " "
 	},
     "network": {
 		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
@@ -55,7 +54,7 @@
         "format-charging": "{capacity}% 󰂄"
     },
     "tray": {
-        "icon-size": 16,
+        "icon-size": 15,
         "spacing": 10
     },
     "clock": {
