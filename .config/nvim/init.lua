@@ -53,7 +53,7 @@ require("lazy").setup({
 			opts = {
 				keymap = {
 					preset = 'default',
-			},
+				},
 				appearance = {
 					nerd_font_variant = 'mono'
 				},
@@ -80,31 +80,36 @@ require("lazy").setup({
 					}
 				},
 				sources = {
-					default = { 'lsp', 'path', 'snippets', 'buffer' },
 					providers = {
 						lsp = {
-							enabled = function()
+							enabled = function ()
 								local clients = vim.lsp.get_active_clients({bufnr = vim.api.nvim_get_current_buf()})
 								return #clients > 0
-							end,
+							end
 						},
 						path = {
-							enabled = function()
+							enabled = function ()
 								local clients = vim.lsp.get_active_clients({bufnr = vim.api.nvim_get_current_buf()})
 								return #clients > 0
-							end,
+							end
 						},
 						snippets = {
-							enabled = function()
+							enabled = function ()
 								local clients = vim.lsp.get_active_clients({bufnr = vim.api.nvim_get_current_buf()})
 								return #clients > 0
-							end,
+							end
 						},
+						buffer = {
+							enabled = function ()
+								local clients = vim.lsp.get_active_clients({bufnr = vim.api.nvim_get_current_buf()})
+								return #clients > 0
+							end
+						}
 					}
 				},
 				fuzzy = { implementation = "prefer_rust_with_warning" },
 			},
-			opts_extend = { "sources.default" },
+			opts_extend = {},
 		},
 		{ 'lukas-reineke/indent-blankline.nvim' },
 		{
@@ -161,7 +166,8 @@ require("lazy").setup({
 			config = true
 		},
 		{
-			"mason-org/mason.nvim",
+			"mason-org/mason-lspconfig.nvim",
+			dependencies = { "mason.nvim", "neovim/nvim-lspconfig"}
 		},
 		{"m4xshen/hardtime.nvim", dependencies = {"MunifTanjim/nui.nvim"}},
 		{"rcarriga/nvim-notify"}
@@ -208,6 +214,11 @@ require('ibl').setup()
 	--
 --
 require("mason").setup()
+require("mason-lspconfig").setup({
+	automatic_enable = {
+		exclude = { "lua_ls" }
+	}
+})
 require("hardtime").setup()
 -- nvim-notify
 	vim.notify = require("notify")
@@ -216,7 +227,7 @@ require("hardtime").setup()
 		stages = "static",
 	})
 --
--- LSP Config
+-- LSP Config Override
 	local lspconfig = require('lspconfig')
 
 	lspconfig.lua_ls.setup {
@@ -239,12 +250,4 @@ require("hardtime").setup()
 			},
 		},
 	}
-	-- Intelephense for PHP
-	lspconfig.intelephense.setup({})
-	lspconfig.html.setup({
-		filetypes = { "html", "php" }, -- include PHP for embedded HTML
-	})
-	lspconfig.cssls.setup({
-		filetypes = { "css", "scss", "less", "php" }, -- optional for inline styles
-	})
 --
