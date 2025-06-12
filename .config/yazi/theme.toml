@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 cwd = { fg = "red" }
 
 marker_cut = { fg = "magenta", bg = "magenta" }
