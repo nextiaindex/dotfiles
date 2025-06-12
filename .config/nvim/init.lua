@@ -23,40 +23,66 @@ vim.opt.confirm = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.diagnostic.config({
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.INFO] = "",
-			[vim.diagnostic.severity.HINT] = "",
-		}
-	},
 	virtual_text = {
 		prefix = " "
-	}
+	},
+	underline = true,
+	update_in_insert = false,
+	signs = false
 })
+vim.opt.termguicolors = true
 
 -- require this require that...
 require("lazy").setup({
 	spec = {
-		{ 'Shatur/neovim-ayu' },
-		{ 'IogaMaster/neocord', event = "VeryLazy" },
-		{ 'norcalli/nvim-colorizer.lua' },
+		{
+			'Shatur/neovim-ayu',
+		},
+
+		{
+			'IogaMaster/neocord',
+			event = "VeryLazy",
+			opts = {
+				logo                = "auto",
+				logo_tooltip        = nil,
+				main_image          = "language",
+				client_id           = "1157438221865717891",
+				log_level           = nil,
+				debounce_timeout    = 10,
+				blacklist           = {},
+				file_assets         = {},
+				show_time           = true,
+				global_timer        = false,
+				buttons             = nil,
+
+				-- Rich Presence text options
+				editing_text        = "Editing %s",
+				file_explorer_text  = "Browsing %s",
+				git_commit_text     = "Committing changes",
+				plugin_manager_text = "Managing plugins",
+				reading_text        = "Reading %s",
+				workspace_text      = "Working on %s",
+				line_number_text    = "Line %s out of %s",
+				terminal_text       = "Using Terminal",
+
+			}
+		},
+
+		{
+			'norcalli/nvim-colorizer.lua'
+		},
+
 		{
 			'neovim/nvim-lspconfig',
 			dependencies = { 'saghen/blink.cmp' },
 		},
+
 		{
 			'saghen/blink.cmp',
 			dependencies = { 'rafamadriz/friendly-snippets' },
-			version = '1.*',
 			opts = {
-				keymap = {
-					preset = 'default',
-				},
-				appearance = {
-					nerd_font_variant = 'mono'
-				},
+				keymap = {preset = 'super-tab'},
+				appearance = {nerd_font_variant = 'mono'},
 				completion = {
 					menu = {
 						draw = {
@@ -65,19 +91,14 @@ require("lazy").setup({
 									"kind_icon",
 									"label",
 									"label_description",
-									gap = 1,
+									gap = 1
 								},
-								{"kind"}
 							},
-							gap = 10
+							gap = 10,
 						}
 					},
-					documentation = {
-						auto_show = false,
-					},
-					ghost_text = {
-						enabled = true
-					}
+					documentation = {auto_show = false},
+					ghost_text = {enabled = true}
 				},
 				sources = {
 					providers = {
@@ -107,70 +128,91 @@ require("lazy").setup({
 						}
 					}
 				},
-				fuzzy = { implementation = "prefer_rust_with_warning" },
+				fuzzy = { implementation = "lua" },
 			},
-			opts_extend = {},
+			opts_extend = {"sources.default"},
 		},
-		{ 'lukas-reineke/indent-blankline.nvim' },
+
+		{
+			"shellRaining/hlchunk.nvim",
+			opts = {
+				indent = {enable = true}
+			}
+		},
+
 		{
 			'goolord/alpha-nvim',
 		        config = function ()
-				local alpha = require'alpha'
-				local dashboard = require'alpha.themes.dashboard'
-				local section = dashboard.section
-				local fn = vim.fn
-				local config = dashboard.config
-				 dashboard.section.header.val = {
-					[[ __   __     __   __   __     __    __    ]],
-					[[/\ "-.\ \   /\ \ / /  /\ \   /\ "-./  \   ]],
-					[[\ \ \-.  \  \ \ \'/   \ \ \  \ \ \-./\ \  ]],
-					[[ \ \_\\"\_\  \ \__|    \ \_\  \ \_\ \ \_\ ]],
-					[[  \/_/ \/_/   \/_/      \/_/   \/_/  \/_/ ]]
-				}
-				dashboard.section.header.opts.hl = "Exception"
-				dashboard.section.buttons.val = {
-					 dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
-					 dashboard.button( "<Space> + ff", "󰈞  Find file", ":Telescope find_files <CR>"),
-					 dashboard.button ("<Space> + fo", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
-					 dashboard.button( "q", "󰅚  Quit Neovim" , ":qa<CR>"),
-				}
-				local handle = io.popen('fortune')
-				local fortune = handle:read("*a")
-				handle:close()
-				dashboard.section.footer.val = fortune
+					local alpha = require'alpha'
+					local dashboard = require'alpha.themes.dashboard'
+					local section = dashboard.section
+					local fn = vim.fn
+					local config = dashboard.config
+					 dashboard.section.header.val = {
+						[[ __   __     __   __   __     __    __    ]],
+						[[/\ "-.\ \   /\ \ / /  /\ \   /\ "-./  \   ]],
+						[[\ \ \-.  \  \ \ \'/   \ \ \  \ \ \-./\ \  ]],
+						[[ \ \_\\"\_\  \ \__|    \ \_\  \ \_\ \ \_\ ]],
+						[[  \/_/ \/_/   \/_/      \/_/   \/_/  \/_/ ]]
+					}
+					dashboard.section.header.opts.hl = "Exception"
+					dashboard.section.buttons.val = {
+						 dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
+						 dashboard.button( "<Space> + ff", "󰈞  Find file", ":Telescope find_files <CR>"),
+						 dashboard.button ("<Space> + fo", "󰈢  Recently opened files", ":Telescope oldfiles<CR>"),
+						 dashboard.button( "q", "󰅚  Quit Neovim" , ":qa<CR>"),
+					}
+					local handle = io.popen('fortune')
+					local fortune = handle:read("*a")
+					handle:close()
+					dashboard.section.footer.val = fortune
 
-				dashboard.config.opts.noautocmd = true
+					dashboard.config.opts.noautocmd = true
 
-				vim.cmd[[autocmd User AlphaReady echo 'ready']]
-				local marginTopPercent = 0.3
-				local headerPadding = fn.max({2, fn.floor(fn.winheight(0) * marginTopPercent) })
+					vim.cmd[[autocmd User AlphaReady echo 'ready']]
+					local marginTopPercent = 0.3
+					local headerPadding = fn.max({2, fn.floor(fn.winheight(0) * marginTopPercent) })
 
-				config.layout = {
-					{ type = 'padding', val = headerPadding },
-					section.header,
-					{ type = 'padding', val = 2 },
-					section.buttons,
-					section.footer,
-				}
-				alpha.setup(dashboard.config)
+					config.layout = {
+						{ type = 'padding', val = headerPadding },
+						section.header,
+						{ type = 'padding', val = 2 },
+						section.buttons,
+						section.footer,
+					}
+					alpha.setup(dashboard.config)
 			end
 		},
+
 		{
 			'nvim-telescope/telescope.nvim', tag = '0.1.8',
-			dependencies = { 'nvim-lua/plenary.nvim' }
+			dependencies = { 'nvim-lua/plenary.nvim' },
+			config = true
+
 		},
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+		{
+			"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"
+		},
+
 		{
 			'windwp/nvim-autopairs',
 			event = "InsertEnter",
 			config = true
 		},
+
 		{
-			"mason-org/mason-lspconfig.nvim",
-			dependencies = { "mason.nvim", "neovim/nvim-lspconfig"}
+			"mason-org/mason.nvim",
+			config = true
 		},
-		{"m4xshen/hardtime.nvim", dependencies = {"MunifTanjim/nui.nvim"}},
-		{"rcarriga/nvim-notify"}
+
+		{
+			"neovim/nvim-lspconfig"
+		},
+
+		{
+			"rcarriga/nvim-notify"
+		}
 	},
 	install = { colorscheme = { "habamax" } },
 	checker = { enabled = true },
@@ -183,27 +225,12 @@ require("lazy").setup({
 		overrides = {
 			LineNr = { fg = "gray" },
 			CursorLineNr = { fg = "#f28779" },
-		},
+		}
 	})
 	vim.cmd("colorscheme ayu-mirage")
 --
 
-require('neocord').setup({})
 require('colorizer').setup()
-require('ibl').setup()
--- Telescope
-	require('telescope').setup({
-		pickers = {
-			find_files = {
-				hidden = true
-			}
-		},
-		defaults = {
-			file_ignore_patterns = {
-				"%.dump", "%.log", "%.tmp", "node_modules", "%.o", "%.class"
-			}
-		}
-	})
 	-- Telescope Keybinds
 		local builtin = require('telescope.builtin')
 		vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files'})
@@ -213,13 +240,6 @@ require('ibl').setup()
 		vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = 'Telescope oldfiles' })
 	--
 --
-require("mason").setup()
-require("mason-lspconfig").setup({
-	automatic_enable = {
-		exclude = { "lua_ls" }
-	}
-})
-require("hardtime").setup()
 -- nvim-notify
 	vim.notify = require("notify")
 	require("notify").setup({
@@ -231,23 +251,69 @@ require("hardtime").setup()
 	local lspconfig = require('lspconfig')
 
 	lspconfig.lua_ls.setup {
+		cmd = { 'lua-language-server' },
+		filetypes = { 'lua' },
+		root_markers = {
+			'.luarc.json',
+			'.luarc.jsonc',
+			'.luacheckrc',
+			'.stylua.toml',
+			'stylua.toml',
+			'selene.toml',
+			'selene.yml',
+			'.git',
+		},
+		on_init = function(client)
+			if client.workspace_folders then
+				local path = client.workspace_folders[1].name
+				if
+					path ~= vim.fn.stdpath('config')
+					and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+					then
+						return
+					end
+				end
+
+				client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+					runtime = {
+						version = 'LuaJIT',
+						path = {
+							'lua/?.lua',
+							'lua/?/init.lua',
+						},
+					},
+					workspace = {
+						checkThirdParty = false,
+						library = {
+							vim.env.VIMRUNTIME
+						}
+					}
+				})
+			end,
+			settings = {
+				Lua = {}
+			}
+		}
+	lspconfig.html.setup {
+		cmd = { 'vscode-html-language-server', '--stdio' },
+		filetypes = { 'html', 'templ' },
+		root_markers = { 'package.json', '.git' },
+		settings = {},
+		init_options = {
+			provideFormatter = true,
+			embeddedLanguages = { css = true, javascript = true },
+			configurationSection = { 'html', 'css', 'javascript' },
+		},
+	}
+	lspconfig.cssls.setup {
+		cmd = { 'vscode-css-language-server', '--stdio' },
+		filetypes = { 'css', 'scss', 'less' },
+		init_options = { provideFormatter = true }, -- needed to enable formatting capabilities
+		root_markers = { 'package.json', '.git' },
 		settings = {
-			Lua = {
-				runtime = {
-					version = 'LuaJIT',
-					path = vim.split(package.path, ';'),
-				},
-				diagnostics = {
-					globals = {'vim'},
-				},
-				workspace = {
-					library = vim.api.nvim_get_runtime_file("", true),
-					checkThirdParty = false,
-				},
-				telemetry = {
-					enable = false,  -- Disable telemetry
-				},
-			},
+			css = { validate = true },
+			scss = { validate = true },
+			less = { validate = true },
 		},
 	}
 --
