@@ -86,13 +86,13 @@ require("lazy").setup({
 				completion = {
 					menu = {
 						draw = {
+							align_to = 'cursor',
 							columns = {
 								{
 									"kind_icon",
 									"label",
-									"label_description",
 									gap = 1
-								},
+								}
 							},
 							gap = 10,
 						}
