@@ -31,6 +31,8 @@ vim.diagnostic.config({
 	signs = false
 })
 vim.opt.termguicolors = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- require this require that...
 require("lazy").setup({
@@ -212,6 +214,14 @@ require("lazy").setup({
 
 		{
 			"rcarriga/nvim-notify"
+		},
+
+		{
+			"nvim-tree/nvim-tree.lua",
+			dependencies = {
+				"nvim-tree/nvim-web-devicons"
+			},
+			config = true
 		}
 	},
 	install = { colorscheme = { "habamax" } },
@@ -247,6 +257,9 @@ require('colorizer').setup()
 		stages = "static",
 	})
 --
+
+vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>')
+
 -- LSP Config Override
 	local lspconfig = require('lspconfig')
 
