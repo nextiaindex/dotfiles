@@ -17,5 +17,6 @@ This is a repository where I put my Linux dotfiles. You can use all of the dotfi
 - [dwm](https://codeberg.org/nextiaindex/dwm)
 - [st](https://codeberg.org/nextiaindex/st)
 - [slstatus](https://codeberg.org/nextiaindex/slstatus)
+- [slock](https://codeberg.org/nextiaindex/slock)
 
 ![](https://i.imgur.com/BmhIC1G.jpeg)
