@@ -94,10 +94,14 @@ require("lazy").setup({
 									"kind_icon",
 									"label",
 									gap = 1
+								},
+								{
+									"kind"
 								}
 							},
 							gap = 10,
-						}
+							treesitter = {"lsp"}
+						},
 					},
 					documentation = {auto_show = false},
 					ghost_text = {enabled = true}
@@ -221,6 +225,11 @@ require("lazy").setup({
 			dependencies = {
 				"nvim-tree/nvim-web-devicons"
 			},
+			config = true
+		},
+
+		{
+			"numToStr/Comment.nvim",
 			config = true
 		}
 	},
