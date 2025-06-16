@@ -125,13 +125,13 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 Print
-	PATH=$PATH:/home/nextia/.local/bin screenshot-plain
+	PATH=$PATH:/home/nextia/.local/bin maim-plain
 
 alt + Print
-	PATH=$PATH:/home/nextia/.local/bin screenshot-fancy
+	PATH=$PATH:/home/nextia/.local/bin maim-fancy
 
 ctrl + Print
-	PATH=$PATH:/home/nextia/.local/bin screenshot-full
+	PATH=$PATH:/home/nextia/.local/bin maim-full
 
 XF86MonBrightnessUp
 	brightnessctl set +5%
