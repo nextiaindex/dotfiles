@@ -24,8 +24,8 @@ configuration {
 window {
 	width: 30%;
 	background-color: @bg;
-	border: 2px;
-	border-color: @gray;
+	// border: 2px;
+	// border-color: @gray;
 	padding: 10px;
 }
 
