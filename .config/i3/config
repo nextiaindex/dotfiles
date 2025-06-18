@@ -22,7 +22,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym Print exec --no-startup-id /bin/sh -c /home/nextia/.local/bin/maim-plain
-bindsym Alt+Print exec --no-startup-id /bin/sh -c /home/nextia/.local/bin/maim-fancy
+bindsym $mod+Print exec --no-startup-id /bin/sh -c /home/nextia/.local/bin/maim-fancy
 bindsym Ctrl+Print exec --no-startup-id /bin/sh -c /home/nextia/.local/bin/maim-full
 
 
