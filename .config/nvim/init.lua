@@ -214,7 +214,8 @@ require("lazy").setup({
 					"lua_ls",
 					"html",
 					"cssls",
-					"pyright"
+					"pyright",
+					"intelephense"
 				}
 			},
 			dependencies = {
