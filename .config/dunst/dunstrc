@@ -103,10 +103,10 @@
     padding = 10 
 
     # Horizontal padding.
-    horizontal_padding = 10 
+    horizontal_padding = 15 
 
     # Padding between text and icon.
-    text_icon_padding = 10 
+    text_icon_padding = 15 
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
