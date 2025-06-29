@@ -7,31 +7,42 @@ window#waybar {
     background-color: #1f2430;
 }
 
-#workspaces {
-	margin-left: 1em;
-	margin-top: 3px;
+/* #workspaces { */
+/* 	margin-left: 1em; */
+/* 	margin-top: 3px; */
+/* } */
+/**/
+/* #workspaces button { */
+/* 	padding-left: 0px; */
+/* 	padding-right: 2em; */
+/* 	padding-top: 0px; */
+/* } */
+/**/
+/* #workspaces button.focused { */
+/* 	color: #f28779; */
+/* 	font-weight: bold; */
+/* } */
+
+#tags button {
+	color: #cccac2;
+	padding: 10px
+}
+#tags button.focused {
+	color: #f28779
+}
+#tags button.urgent {
+	color: #ffd173
 }
 
-#workspaces button {
-	padding-left: 0px;
-	padding-right: 2em;
-	padding-top: 0px;
-}
 button:hover {
 	box-shadow: none;
 	text-shadow: none;
 	background: none;
 	transition: none;
 	border-color: transparent;
-	color: #d5ff80;
-	font-weight: bold;
+	/* color: #d5ff80; */
+	/* font-weight: bold; */
 }
-
-#workspaces button.focused {
-	color: #f28779;
-	font-weight: bold;
-}
-
 #clock {
 	color: #cccac2;
 	padding-right: 4;
@@ -39,9 +50,9 @@ button:hover {
 }
 
 #tray {
-	background-color: #333c50;
-	color: #cccac2;
-	padding: 0 10px 0 10px;
+	/* background-color: #333c50; */
+	/* color: #cccac2; */
+	padding: 0 15px 0 5px;
 }
 
 #battery {
