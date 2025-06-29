@@ -18,7 +18,7 @@ configuration {
 	gray: #686868;
 
 	background-color: @bg;
-	/*border-radius: 0.20em;*/
+	// border-radius: 0.20em;
 }
 
 window {
