@@ -44,6 +44,7 @@
 	#offset = (20, 65)
     offset = (20, 50)
 	#offset = (20, 20)
+	#offset = (40, 120)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -78,7 +79,8 @@
     progress_bar_corners = all
 
     # Corner radius for the icon image.
-    icon_corner_radius = 0
+    #icon_corner_radius = 5
+	icon_corner_radius = 0
 
     # Define which corners to round when drawing the icon image. If icon_corner_radius
     # is set to 0 this option will be ignored.
@@ -274,7 +276,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0 
+    corner_radius = 0
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.
