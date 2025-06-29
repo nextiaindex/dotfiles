@@ -1,11 +1,15 @@
 #!/bin/sh
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+systemctl --user restart xdg-desktop-portal
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 waybar &
 
 riverctl map normal Super+Shift Return spawn foot
-riverctl map normal Super D spawn 'rofi -show drun'
-riverctl map normal Super+Shift Q close
-riverctl map normal Super+Shift E exit
+riverctl map normal Super P spawn 'rofi -show drun'
+riverctl map normal Super Return zoom
+riverctl map normal Super+Shift C close
+riverctl map normal Super+Shift Q exit
 
 riverctl map normal Super J focus-view next
 riverctl map normal Super K focus-view previous
@@ -69,5 +73,5 @@ riverctl rule-add -app-id "bar" ssd
 riverctl default-layout rivertile
 rivertile -view-padding 5 -outer-padding 15 -main-ratio 0.5 &
 riverctl border-color-focused 0xf28779
-riverctl border-color-unfocused 0x686868
+riverctl border-color-unfocused 0x1f2430
 riverctl background-color 0x2a2e3c
