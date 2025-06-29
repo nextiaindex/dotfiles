@@ -1,7 +1,8 @@
 {
     "height": 40,
     "modules-left": [
-        "sway/workspaces"
+        // "sway/workspaces"
+		"river/tags"
     ],
     "modules-center": [
     ],
@@ -17,6 +18,10 @@
         "clock",
 		"tray"
     ],
+	"river/tags": {
+		"disable-click": true,
+		"hide-vacant": true
+	},
 	"custom/seperator1": {
 		"format": " | "
 	},
