@@ -12,5 +12,4 @@ alias xampp-gui='sudo /opt/lampp/manager-linux-x64.run'
 PS1='\[\e[91m\]\\$\[\e[0m\] \[\e[94m\]\w\[\e[0m\] \[\e[93m\]>\[\e[0m\] '
 
 PATH="$HOME/.local/bin/:$PATH"
-export EDITOR=nvim
-
+export EDITOR=vim
