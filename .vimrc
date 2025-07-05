@@ -11,6 +11,7 @@ Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 set number
+set cursorline
 set relativenumber
 set shiftwidth=4
 set tabstop=4
@@ -20,4 +21,5 @@ set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
 highlight Normal guibg=#1f2430 
-
+highlight LineNr guifg=#686868
+highlight CursorLineNr guifg=#f28779
