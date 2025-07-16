@@ -1,3 +1,4 @@
 #!/bin/sh
+mkdir -p ~/Screenshots
 maim -u ~/Screenshots/screenshot-full-$(date +%d-%m-%Y-%H-%M).png
 notify-send "maim" "Fullscreen screenshot saved"

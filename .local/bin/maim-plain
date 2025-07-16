@@ -1,6 +1,7 @@
 #!/bin/sh
 sleep 0.2
 File=~/Screenshots/Screenshot_$(date +%d-%m-%Y-%H-%M).png
+mkdir -p ~/Screenshots
 
 if maim -s -u "$File";  then
 	notify-send "maim" "Plain region screenshot saved"
