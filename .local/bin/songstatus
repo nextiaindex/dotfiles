@@ -23,4 +23,4 @@ fi
 rm -f "${AlbumArt}" # Remove the album art
 ffmpeg -loglevel quiet -i "${Music}/${SongFile}" -an -vcodec copy "${Temp}/AlbumArt.jpg" # Extract the album art picture from $SongFile and export it to ${Temp}
 #notify-send "ncmpcpp" "󰠃 $SongArtist"'\n'"󰎆 $SongTitle"'\n'"󰀥 $SongAlbum" --icon="$AlbumArt" # Send the notification
-notify-send "ncmpcpp" "󰠃 $SongArtist"'\n'"󰎆 $SongTitle"'\n'"󰀥 $SongAlbum" --icon="$AlbumArt" # Send the notification
+notify-send "ncmpcpp" "▶ <b>$SongTitle</b>"'\n'"<i>by</i> <b>$SongArtist</b>"'\n'"<i>from</i> <b>$SongAlbum</b>" --icon="$AlbumArt" # Send the notification
