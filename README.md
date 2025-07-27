@@ -12,10 +12,10 @@ This is a repository where I put my Linux dotfiles. You can use all of the dotfi
 ![](screenshots/i3.png)
 
 # Suckless Builds
-- [dwm](https://codeberg.org/nextiaindex/dwm)
-- [st](https://codeberg.org/nextiaindex/st)
-- [slstatus](https://codeberg.org/nextiaindex/slstatus)
-- [slock](https://codeberg.org/nextiaindex/slock)
+- [dwm](https://github.com/nextiaindex/dwm-flexipatch)
+- [st](https://github.com/nextiaindex/st-flexipatch)
+- [slstatus](https://github.com/nextiaindex/slstatus)
+- [slock](https://github.com/nextiaindex/slock)
 
 # External Links
-- [Neovim configurations](https://codeberg.org/nextiaindex/nextia.nvim)
+- [Neovim Configurations](https://github.com/nextiaindex/nextia.nvim)
