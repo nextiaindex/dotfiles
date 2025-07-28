@@ -1,23 +1,26 @@
 {
-    "height": 40,
-    "modules-left": [
-        // "sway/workspaces"
+	"height": 40,
+	"modules-left": [
+		// uncomment sway/workspaces
+		// and river/tags if you want to use sway/workspaces
+			// "sway/workspaces"
+		//
 		"river/tags"
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
-        "network",
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+		"network",
 		"custom/seperator2",
-        "backlight",
+		"backlight",
 		"custom/seperator2",
 		"pulseaudio",
 		"custom/seperator2",
-        "battery",
+		"battery",
 		"custom/seperator2",
-        "clock",
+		"clock",
 		"tray"
-    ],
+	],
 	"river/tags": {
 		"disable-click": true,
 		"hide-vacant": true
@@ -34,35 +37,35 @@
 	"custom/space": {
 		"format": " "
 	},
-    "network": {
+	"network": {
 		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
-        "format-wifi": "{ifname} {icon}",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "󰅛"
-    },
-    "backlight": {
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "format": "{percent}% {icon}"
-    },
+		"format-wifi": "{ifname} {icon}",
+		"format-ethernet": "󰈀",
+		"format-disconnected": "󰅛"
+	},
+	"backlight": {
+		"format-icons": ["", "", "", "", "", "", "", "", ""],
+		"format": "{percent}% {icon}"
+	},
 	"pulseaudio": {
 		"format": "{volume}% ",
 		"format-muted": ""
 	},
-    "battery": {
-        "states": {
-            "good": 21,
-            "warning": 20,
-            "critical": 10
-        },
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂄"
-    },
-    "tray": {
-        "icon-size": 15,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{:%R %Z} 󰥔"
-    }
+	"battery": {
+		"states": {
+			"good": 21,
+			"warning": 20,
+			"critical": 10
+		},
+		"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+		"format": "{capacity}% {icon}",
+		"format-charging": "{capacity}% 󰂄"
+	},
+	"tray": {
+		"icon-size": 15,
+		"spacing": 10
+	},
+	"clock": {
+		"format": "{:%R %Z} 󰥔"
+	}
 }
