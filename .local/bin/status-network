@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Function to check internet connectivity through a given interface
+check_interface() {
+    local iface=$1
+    # Check if the interface exists and has a carrier (i.e., is connected)
+    if [[ -d "/sys/class/net/$iface" ]] && cat "/sys/class/net/$iface/carrier" 2>/dev/null | grep -q 1; then
+        # Test internet connectivity
+        if ping -I "$iface" -c 1 -W 1 8.8.8.8 >/dev/null 2>&1; then
+            return 0
+        fi
+    fi
+    return 1
+}
+
+# Typical Ethernet and WLAN interface names
+ETH_IFACE="eth0"
+WLAN_IFACE="wlp1s0"
+
+# Try to detect actual interface names if not standard
+if ! ip link show "$ETH_IFACE" &>/dev/null; then
+    ETH_IFACE=$(ip link | grep -E '^[0-9]+: e' | awk -F: '{print $2}' | tr -d ' ')
+fi
+if ! ip link show "$WLAN_IFACE" &>/dev/null; then
+    WLAN_IFACE=$(ip link | grep -E '^[0-9]+: w' | awk -F: '{print $2}' | tr -d ' ')
+fi
+
+# Check Ethernet first
+if check_interface "$ETH_IFACE"; then
+    echo "ETH"
+elif check_interface "$WLAN_IFACE"; then
+    echo "WLAN"
+else
+    echo "N/A"
+fi
+
