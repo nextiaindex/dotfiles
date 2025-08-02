@@ -1,0 +1,3 @@
+#!/bin/sh
+Sep=" | "
+echo "^c#686868^$Sep"
