@@ -1,7 +1,7 @@
 configuration {
 	display-drun: "Aplications";
 	drun-display-format: "{icon} {name}";
-	font: "UnifontExMono 12";
+	font: "Space Mono 11";
 	show-icons: true;
     modi: "drun,emoji";
 }
