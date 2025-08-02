@@ -5,3 +5,4 @@
 .config/nvim/.gitignore
 .config/kitty/kitty.conf.bak
 .config/ncmpcpp/error.log
+.config/tmux/plugins
