@@ -42,7 +42,7 @@
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     #offset = (20, 60)
 	#offset = (20, 65) # bspwm
-    offset = (20, 52)
+    offset = (20, 48)
 	#offset = (20, 20)
 	#offset = (40, 120)
 
