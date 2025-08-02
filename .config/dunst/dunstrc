@@ -42,8 +42,8 @@
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     #offset = (20, 60)
 	#offset = (20, 65) # bspwm
-    #offset = (20, 50)
-	offset = (20, 20)
+    offset = (20, 52)
+	#offset = (20, 20)
 	#offset = (40, 120)
 
     # Scale factor. It is auto-detected if value is 0.
@@ -115,8 +115,7 @@
     frame_width = 0
 
     # Defines color of the frame around the notification window.
-    #frame_color = "#686868"
-    frame_color = "#1f2430"
+    frame_color = "#686868"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -149,7 +148,7 @@
 
     ### Text ###
 
-    font = UnifontExMono 12
+    font = "SpaceMono Nerd Font Propo 11"
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -346,7 +345,6 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    #background = "#1f2430"
 	background = "#171b24"
     foreground = "#cccac2"
     timeout = 10
@@ -354,7 +352,6 @@
     default_icon = dialog-information
 
 [urgency_normal]
-    #background = "#1f2430"
 	background = "#171b24"
     foreground = "#cccac2"
     timeout = 10
@@ -363,7 +360,6 @@
     default_icon = dialog-information
 
 [urgency_critical]
-    #background = "#1f2430"
 	background = "#171b24"
     foreground = "#cccac2"
     timeout = 0
