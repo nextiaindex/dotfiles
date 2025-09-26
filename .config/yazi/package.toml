@@ -3,5 +3,10 @@ use = "yazi-rs/plugins:mount"
 rev = "b886025"
 hash = "f10a14e823382d90fab5b3ee54cb38fe"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "d1c8baa"
+hash = "3996fc74044bc44144b323686f887e1"
+
 [flavor]
 deps = []
