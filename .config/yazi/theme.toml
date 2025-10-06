@@ -1,5 +1,5 @@
 [mgr]
-cwd = { fg = "red" }
+cwd = { fg = "cyan" }
 
 marker_cut = { fg = "magenta", bg = "magenta" }
 
@@ -8,7 +8,7 @@ count_cut = { fg = "black", bg = "magenta" }
 count_selected = { fg = "black", bg = "yellow" }
 
 [mode]
-normal_main = { fg = "black", bg = "red" }
+normal_main = { fg = "black", bg = "cyan" }
 normal_alt = { fg = "black", bg = "gray" }
 
 select_main = { fg = "black", bg = "blue" }
@@ -19,5 +19,5 @@ unset_alt = { fg = "black", bg = "gray" }
 
 [filetype]
 rules = [
-	{ name = "*/", fg = "red" }
+	{ name = "*/", fg = "cyan" }
 ]
