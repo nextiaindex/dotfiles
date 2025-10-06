@@ -27,10 +27,10 @@ fi
 
 # Check Ethernet first
 if check_interface "$ETH_IFACE"; then
-    echo "^c#f28779^NET ^c#cccac2^ETH"
+    echo "^c#aeaed1^NET ^c#cccac2^ETH"
 elif check_interface "$WLAN_IFACE"; then
-    echo "^c#f28779^NET ^c#cccac2^WLAN"
+    echo "^c#aeaed1^NET ^c#cccac2^WLAN"
 else
-    echo "^c#f28779^NET ^c#cccac2^N/A"
+    echo "^c#aeaed1^NET ^c#cccac2^N/A"
 fi
 
