@@ -1,10 +1,10 @@
 set guioptions none
 
-set default-bg "#1f2430"
-set default-fg "#cccac2"
+set default-bg "#141415"
+set default-fg "#cdcdcd"
 
-set recolor-darkcolor "#cccac2"
-set recolor-lightcolor "#1f2430"
+set recolor-darkcolor "#cdcdcd"
+set recolor-lightcolor "#141415"
 
-set statusbar-bg "#1f2430"
-set statusbar-fg "#cccac2"
+set statusbar-bg "#141415"
+set statusbar-fg "#cdcdcd"
