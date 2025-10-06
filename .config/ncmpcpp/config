@@ -11,7 +11,7 @@ visualizer_look = ▋▋
 
 progressbar_look = "━━─"
 
-current_item_prefix = $3
+current_item_prefix = $4
 current_item_suffix = $8
 
 now_playing_prefix = $7$b
