@@ -9,13 +9,13 @@ configuration {
 @theme "/dev/null"
 
 * {
-	bg: #141415;
-	bg-alt: #252530;
-	primary: #aeaed1;
+	bg: #1f2430;
+	bg-alt: #333c50;
+	primary: #f28779;
 
-	fg: #cdcdcd;
-	fg-alt: #d7d7d7;
-	gray: #606079;
+	fg: #cccac2;
+	fg-alt: #252530;
+	gray: #f28779;
 
 	background-color: @bg;
 	// border-radius: 0.20em;
