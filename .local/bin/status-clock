@@ -1,3 +1,3 @@
 #!/bin/sh
 Clock=$(date '+%H:%M')
-echo "^c#aeaed1^UTC+7 ^c#cccac2^$Clock"
+echo "^c#f28779^UTC+7 ^c#cccac2^$Clock"

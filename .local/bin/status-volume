@@ -1,3 +1,3 @@
 #!/bin/sh
 Vol=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '\d+%' | head -1)
-echo "^c#aeaed1^VOL ^c#cccac2^$Vol"
+echo "^c#f28779^VOL ^c#cccac2^$Vol"

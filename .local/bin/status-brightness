@@ -3,4 +3,4 @@ brightness_dir="/sys/class/backlight/*"
 current=$(cat $brightness_dir/brightness)
 max=$(cat $brightness_dir/max_brightness)
 percent=$(( 100 * current / max ))
-echo "^c#aeaed1^BRI ^c#cccac2^$percent%"
+echo "^c#f28779^BRI ^c#cccac2^$percent%"
