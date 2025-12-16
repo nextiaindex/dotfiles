@@ -3,19 +3,19 @@ configuration {
 	drun-display-format: "{icon} {name}";
 	font: "Space Mono 11";
 	show-icons: true;
-    modi: "drun,emoji";
+	modi: "drun,emoji";
 }
 
 @theme "/dev/null"
 
 * {
-	bg: #1f2430;
-	bg-alt: #333c50;
-	primary: #f28779;
+	bg: #141415;
+	bg-alt: #252530;
+	primary: #aeaed1;
 
-	fg: #cccac2;
-	fg-alt: #252530;
-	gray: #f28779;
+	fg: #cdcdcd;
+	fg-alt: #d7d7d7;
+	gray: #606079;
 
 	background-color: @bg;
 	// border-radius: 0.20em;
