@@ -15,3 +15,5 @@ PS1='\[\e[40m\] \[\e[36;40m\]\w\[\e[0;40m\] \[\e[0m\] \[\e[40m\] \[\e[33;40m\]\\
 PATH="$HOME/.local/bin/:$PATH"
 PATH="$HOME/.local/share/nvim/mason/bin/:$PATH"
 export EDITOR=nvim
+
+set -o vi
