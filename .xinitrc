@@ -1,1 +1,1 @@
-exec ~/.local/bin/launch-dwm.sh
+exec ~/.local/bin/launch-i3.sh
