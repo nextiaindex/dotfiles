@@ -42,7 +42,7 @@
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     #offset = (20, 60)
 	#offset = (20, 65) # bspwm
-    offset = (20, 48)
+    offset = (20, 20)
 	#offset = (20, 20)
 	#offset = (40, 120)
 
@@ -148,11 +148,11 @@
 
     ### Text ###
 
-    font = "SpaceMono Nerd Font Propo 10"
+    font = "UnifontExMono 12"
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 0
+    line_height = 2
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -345,23 +345,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-	background = "#252530"
-    foreground = "#cdcdcd"
+	background = "#171b24"
+    foreground = "#cccac2"
     timeout = 10
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
-	background = "#252530"
-    foreground = "#cdcdcd"
+	background = "#171b24"
+    foreground = "#cccac2"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency
     default_icon = dialog-information
 
 [urgency_critical]
-	background = "#252530"
-    foreground = "#cdcdcd"
+	background = "#171b24"
+    foreground = "#cccac2"
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency

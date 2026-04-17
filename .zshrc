@@ -11,7 +11,7 @@ zinit light nextiaindex/zsh-vi-mode
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 
-PROMPT="%K{black} %k%K{black}%F{cyan}%~%f%k%K{black} %k %K{black} %k%K{black}%F{yellow}$%f%k%K{black} %k "
+PROMPT="%K{black} %k%K{black}%F{red}%~%f%k%K{black} %k %K{black} %k%K{black}%F{magenta}$%f%k%K{black} %k "
 
 alias ls='ls --color'
 

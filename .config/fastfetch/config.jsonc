@@ -9,7 +9,7 @@
 			"right": 3
 		},
 		"color": {
-			"1": "cyan"
+			"1": "red"
 		}
 	},
 	"modules": [
@@ -17,8 +17,8 @@
 		{
 			"type": "Title",
 			"color": {
-				"user": "cyan",
-				"host": "cyan"
+				"user": "red",
+				"host": "red"
 			}
 		},
 		"separator",
@@ -26,32 +26,32 @@
 			"type": "custom",
 			"key": "Laptop",
 			"format": "ASUS Vivobook 14 A412DA",
-			"keyColor": "cyan"
+			"keyColor": "red"
 		},
 		{
 			"type": "os",
 			"format": "{pretty-name}",
-			"keyColor": "cyan"
+			"keyColor": "red"
 		},
 		{
 			"type": "wm",
 			"format": "{pretty-name}",
-			"keyColor": "cyan"
+			"keyColor": "red"
 		},
 		{
 			"type": "shell",
 			"format": "{pretty-name}",
-			"keyColor": "cyan"
+			"keyColor": "red"
 		},
 		{
 			"type": "terminal",
 			"format": "{pretty-name}",
-			"keyColor": "cyan"
+			"keyColor": "red"
 		},
 		{
 			"type": "terminalfont",
 			"format": "{name}",
-			"keyColor": "cyan"
+			"keyColor": "red"
 		},
 		"break",
 		{

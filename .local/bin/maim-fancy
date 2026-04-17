@@ -5,7 +5,7 @@ mkdir -p ~/Screenshots
 
 if maim -s -u "$File"; then
 	mv Screenshot*.png /tmp/
-	magick /tmp/Screenshot*.png \( +clone -background black -shadow 80x10+0+0 -fill "#141415" \) +swap -background "#606079" -layers merge +repage /tmp/Screenshot*.png
+	magick /tmp/Screenshot*.png \( +clone -background black -shadow 80x10+0+0 -fill "#171b24" \) +swap -background "#3f455a" -layers merge +repage /tmp/Screenshot*.png
 	mv /tmp/Screenshot*.png ~/Screenshots
 	notify-send "maim" "Fancy region screenshot saved"
 else
